@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DemandAI - Professional Demand Letters</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>DemandAI</h1>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#create" class="cta-button">Create Letter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Professional Demand Letters in Minutes</h1>
+            <p>AI-powered demand letters for unpaid invoices, security deposits, product disputes, and more.</p>
+            <a href="#create" class="cta-button">Create Your Letter Now</a>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Select Letter Type</h3>
+                <p>Choose from various letter types including unpaid invoices, security deposits, and more.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Fill Out Information</h3>
+                <p>Answer a few questions about your specific situation.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Choose Service Level</h3>
+                <p>Select from our Basic, Professional, or Attorney-Reviewed service tiers.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Receive Your Letter</h3>
+                <p>Get your professionally formatted demand letter delivered to your email.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <h2>Pricing Plans</h2>
+        <div class="pricing-plans">
+            <div class="plan">
+                <h3>Basic Letter</h3>
+                <p class="price">$29.99</p>
+                <ul>
+                    <li>AI-generated demand letter</li>
+                    <li>Plain text format</li>
+                    <li>Email delivery</li>
+                </ul>
+                <a href="#create" class="cta-button">Select</a>
+            </div>
+            <div class="plan featured">
+                <h3>Professional Letter</h3>
+                <p class="price">$49.99</p>
+                <ul>
+                    <li>AI-generated demand letter</li>
+                    <li>Professional letterhead</li>
+                    <li>Certified mail option (+fee)</li>
+                    <li>Email delivery</li>
+                </ul>
+                <a href="#create" class="cta-button">Select</a>
+            </div>
+            <div class="plan">
+                <h3>Attorney-Reviewed</h3>
+                <p class="price">$99.99</p>
+                <ul>
+                    <li>AI-generated demand letter</li>
+                    <li>Attorney review and editing</li>
+                    <li>Professional letterhead</li>
+                    <li>Certified mail option (+fee)</li>
+                    <li>Email delivery</li>
+                </ul>
+                <a href="#create" class="cta-button">Select</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3>Is this legal advice?</h3>
+                <p>No. DemandAI provides document generation services, not legal advice. Attorney review does not constitute legal advice or establish an attorney-client relationship.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How long will it take to receive my letter?</h3>
+                <p>Basic and Professional letters are delivered immediately. Attorney-Reviewed letters are typically delivered within 1-2 business days.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I get a refund if I'm not satisfied?</h3>
+                <p>Yes! We offer a 100% satisfaction guarantee. Though you won't see the letter before paying, if you're not satisfied with the quality of your letter for any reason, contact us within 24 hours at support@demandai.com for a full refund.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Will an attorney represent me in court?</h3>
+                <p>No. Our service is limited to generating demand letters. It does not include representation in legal proceedings.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How is my payment information protected?</h3>
+                <p>All payments are processed securely through Stripe, one of the world's most trusted payment processors. Your credit card details are never stored on our servers.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I download my letter as a Word document?</h3>
+                <p>Yes! For all service tiers, you can download your letter as a Word document immediately after purchase, allowing you to make any minor edits you need.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you use AI to generate letters?</h3>
+                <p>We use Anthropic's Claude AI to generate custom demand letters tailored to your specific situation. The AI creates professional, legally-formatted letters based on the information you provide.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="create" class="form-section">
+        <h2>Create Your Demand Letter</h2>
+        <div id="letter-form">
+            <div class="form-step" id="step1">
+                <h3>Step 1: Select Letter Type</h3>
+                <div class="letter-types">
+                    <div class="letter-type" data-type="unpaid-invoice">
+                        <h4>Unpaid Invoice</h4>
+                        <p>For freelancers, contractors, or businesses seeking payment for services rendered.</p>
+                    </div>
+                    <div class="letter-type" data-type="security-deposit">
+                        <h4>Security Deposit Return</h4>
+                        <p>For tenants seeking return of security deposits from landlords.</p>
+                    </div>
+                    <div class="letter-type" data-type="defective-product">
+                        <h4>Defective Product</h4>
+                        <p>For consumers seeking refund or replacement for defective products.</p>
+                    </div>
+                    <div class="letter-type" data-type="contractor-dispute">
+                        <h4>Contractor Dispute</h4>
+                        <p>For property owners with disputes involving contractors.</p>
+                    </div>
+                    <div class="letter-type" data-type="personal-loan">
+                        <h4>Personal Loan</h4>
+                        <p>For individuals seeking repayment of personal loans.</p>
+                    </div>
+                    <div class="letter-type" data-type="other-dispute">
+                        <h4>Other Dispute</h4>
+                        <p>For other situations requiring a formal demand letter.</p>
+                    </div>
+                </div>
+                <button class="next-button" id="step1-next">Next: Enter Details</button>
+            </div>
+
+            <div class="form-step hidden" id="step2">
+                <!-- This will be dynamically populated based on letter type -->
+                <h3>Step 2: Enter Your Details</h3>
+                <div id="dynamic-form-fields">
+                    <!-- Form fields will be inserted here by JavaScript -->
+                </div>
+                <div class="form-navigation">
+                    <button class="back-button" id="step2-back">Back</button>
+                    <button class="next-button" id="step2-next">Next: Choose Plan</button>
+                </div>
+            </div>
+
+            <div class="form-step hidden" id="step3">
+                <h3>Step 3: Preview Your Letter & Choose a Plan</h3>
+                
+                <div class="letter-preview-container">
+                    <h4>Letter Preview</h4>
+                    <div class="letter-preview" id="letter-preview">
+                        <!-- Preview will be inserted here by JavaScript -->
+                    </div>
+                    <div class="preview-actions">
+                        <a href="#" class="download-preview-button" id="download-preview">Download Preview</a>
+                    </div>
+                </div>
+                
+                <div class="payment-plans">
+                    <div class="payment-plan" data-plan="basic">
+                        <h4>Basic Letter</h4>
+                        <p class="price">$29.99</p>
+                        <ul>
+                            <li>AI-generated demand letter</li>
+                            <li>Plain text format</li>
+                            <li>Email delivery</li>
+                        </ul>
+                        <div class="plan-details" id="basic-details">
+                            <h5>Basic Plan Details</h5>
+                            <p>Our most affordable option for those on a budget. Generate a professionally written demand letter using our advanced AI technology.</p>
+                            <ul class="plan-feature-list">
+                                <li><strong>AI-Generated Content:</strong> Letter crafted using Anthropic's state-of-the-art Claude AI</li>
+                                <li><strong>Plain Text Format:</strong> Clean, standard formatting that's easy to read</li>
+                                <li><strong>Immediate Delivery:</strong> Receive your letter instantly via email</li>
+                                <li><strong>Word Document:</strong> Downloadable as an editable .docx file</li>
+                                <li><strong>Money-Back Guarantee:</strong> 100% satisfaction guaranteed or full refund</li>
+                            </ul>
+                            <div class="plan-recommendation">
+                                <strong>Best for:</strong> Simple disputes, first-time demands, or when cost is a primary concern
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-plan" data-plan="professional">
+                        <h4>Professional Letter</h4>
+                        <p class="price">$49.99</p>
+                        <ul>
+                            <li>AI-generated demand letter</li>
+                            <li>Professional letterhead</li>
+                            <li>Certified mail option (+fee)</li>
+                            <li>Email delivery</li>
+                        </ul>
+                        <div class="plan-details" id="professional-details">
+                            <h5>Professional Plan Details</h5>
+                            <p>Our most popular option. Add legitimacy and professionalism to your demand with enhanced formatting and delivery options.</p>
+                            <ul class="plan-feature-list">
+                                <li><strong>Premium AI-Generated Content:</strong> More comprehensive letter with enhanced legal language</li>
+                                <li><strong>Professional Letterhead:</strong> Official-looking document with legal-style formatting</li>
+                                <li><strong>Custom Footer:</strong> Includes case reference number and official timestamp</li>
+                                <li><strong>Certified Mail Option:</strong> Available for an additional fee (+$15) for proof of delivery</li>
+                                <li><strong>Priority Processing:</strong> Your letter is generated with priority status</li>
+                                <li><strong>Return Receipt:</strong> Optional proof of delivery tracking (additional fee applies)</li>
+                                <li><strong>Money-Back Guarantee:</strong> 100% satisfaction guaranteed or full refund</li>
+                            </ul>
+                            <div class="plan-recommendation">
+                                <strong>Best for:</strong> Most cases where you want to be taken seriously without the cost of attorney review
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-plan" data-plan="attorney">
+                        <h4>Attorney-Reviewed</h4>
+                        <p class="price">$99.99</p>
+                        <ul>
+                            <li>AI-generated demand letter</li>
+                            <li>Attorney review and editing</li>
+                            <li>Professional letterhead</li>
+                            <li>Certified mail option (+fee)</li>
+                            <li>Email delivery</li>
+                        </ul>
+                        <div class="plan-details" id="attorney-details">
+                            <h5>Attorney-Reviewed Plan Details</h5>
+                            <p>Our premium option ensures your letter is reviewed by a licensed attorney for maximum impact and professionalism.</p>
+                            <ul class="plan-feature-list">
+                                <li><strong>Advanced AI-Generated Content:</strong> Comprehensive letter with sophisticated legal language</li>
+                                <li><strong>Attorney Review:</strong> Licensed attorney reviews and enhances your letter</li>
+                                <li><strong>Legal Terminology Check:</strong> Verification of proper legal terms and phrasing</li>
+                                <li><strong>Premium Letterhead:</strong> Enhanced professional formatting with legal styling</li>
+                                <li><strong>Certified Mail Included:</strong> Standard certified mail service at no extra charge</li>
+                                <li><strong>Attorney Digital Signature:</strong> Adds credibility with attorney review notation</li>
+                                <li><strong>Priority Support:</strong> Dedicated email support for any questions</li>
+                                <li><strong>Extended Satisfaction Guarantee:</strong> 48-hour money-back guarantee</li>
+                            </ul>
+                            <div class="plan-recommendation">
+                                <strong>Best for:</strong> High-value disputes, complex situations, or when maximum impact is required
+                            </div>
+                        </div>
+                        <div class="legal-notice">
+                            <p>NOTE: Attorney review does not constitute legal advice and does not establish an attorney-client relationship. The reviewing attorney will only review the document for professional formatting and content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-navigation">
+                    <button class="back-button" id="step3-back">Back</button>
+                    <button class="next-button" id="step3-next">Next: Payment</button>
+                </div>
+            </div>
+
+            <div class="form-step hidden" id="step4">
+                <h3>Step 4: Payment Information</h3>
+                <div class="payment-form">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div id="card-element">
+                        <!-- Stripe Card Element will be inserted here -->
+                    </div>
+                    <div id="card-errors" role="alert"></div>
+                </div>
+                <div class="disclaimer">
+                    <p>By proceeding with payment, you acknowledge that this service does not constitute legal advice and does not establish an attorney-client relationship.</p>
+                    <p>For the Attorney-Reviewed option: The reviewing attorney will ONLY review the document for professional formatting and content. This does NOT include legal representation, legal advice, legal opinions on the merits of your case, or establish an attorney-client relationship.</p>
+                    <p>All letters are generated using Anthropic AI based on your provided information.</p>
+                    <p class="satisfaction-note"><strong>Satisfaction Guarantee:</strong> We offer a 100% satisfaction guarantee. If you're not satisfied with your letter, contact us within 24 hours for a full refund.</p>
+                    <div class="stripe-info">
+                        <img src="https://stripe.com/img/v3/home/twitter.png" alt="Stripe" height="20">
+                        <p>Payments processed securely by Stripe. Your card information is never stored on our servers.</p>
+                    </div>
+                </div>
+                <div class="form-navigation">
+                    <button class="back-button" id="step4-back">Back</button>
+                    <button class="submit-button" id="submit-payment">Complete Purchase</button>
+                </div>
+            </div>
+
+            <div class="form-step hidden" id="thank-you">
+                <h3>Thank You for Your Purchase!</h3>
+                <p>Your demand letter is being processed. You will receive an email with your letter shortly.</p>
+                <p class="order-reference">Order Reference: <span id="order-id"></span></p>
+                <!-- Download section and other elements will be added dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>DemandAI</h2>
+            </div>
+            <div class="footer-links">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-legal">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="disclaimer.html">Legal Disclaimer</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p>Email: support@demandai.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 DemandAI. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
